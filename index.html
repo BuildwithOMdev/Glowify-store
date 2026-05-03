@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glowify | Radiant Skin in 7 Days</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDEEEB 100%);
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .hero .container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-title {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .hero-image {
+      flex: 1;
+      position: relative;
+    }
+    .hero-image img {
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    /* Benefits */
+    .benefits {
+      background-color: var(--white);
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .benefit-card {
+      text-align: center;
+      padding: 30px;
+      background: var(--bg-color);
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+    .benefit-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    /* Social Proof */
+    .social-proof {
+      background-color: var(--secondary-color);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .review-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+    .stars {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    
+    /* Trust Badges */
+    .trust-badges {
+      background: var(--white);
+      padding: 40px 0;
+      border-top: 1px solid #EEE;
+    }
+    .badges-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 150px;
+    }
+    .badge img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .hero .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-banner">
+    ✨ Demo Store – Ready to Launch Dropshipping Business
+  </div>
+
+  <div class="urgency-banner">
+    🔥 Limited Stock Available - Order within <span id="countdown">15:00</span> for Same Day Dispatch!
+  </div>
+
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Glowify Logo" style="height: 50px; width: auto;">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Shop Serum</a>
+        <a href="about.html">Our Story</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div id="cart-icon" style="cursor: pointer; position: relative; font-size: 1.5rem;">
+          🛒 <span style="position: absolute; top: -10px; right: -10px; background: var(--primary-color); color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.7rem;">1</span>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Say Goodbye to Acne in 7 Days – Visible Results or Your Money Back</h1>
+        <p class="hero-subtitle">Clinically inspired serum designed for clear, glowing skin. Specifically formulated to handle the unique challenges of Indian skin and climate.</p>
+        <a href="product.html" class="btn btn-primary" style="padding: 20px 50px; font-size: 1.3rem;">Shop Now</a>
+        <p class="mt-2" style="font-size: 1rem; font-weight: 600; color: #444;">⭐ 10,000+ Happy Customers | 4.7★ Rated</p>
+        
+        <div class="trust-badges-hero" style="display: flex; gap: 20px; margin-top: 30px;">
+          <div style="font-size: 0.85rem; font-weight: 600;">✅ Cash on Delivery</div>
+          <div style="font-size: 0.85rem; font-weight: 600;">✅ Free Shipping</div>
+          <div style="font-size: 0.85rem; font-weight: 600;">✅ 7-Day Returns</div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/before_after.png" alt="Glowify Before and After Results" class="float-anim">
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Why Choose Glowify?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">✨</div>
+          <h3>Removes Acne & Pimples</h3>
+          <p>Targets acne-causing bacteria and prevents future breakouts.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌸</div>
+          <h3>Brightens Skin Tone</h3>
+          <p>Fades dark spots and pigmentation for an even, glowing complexion.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💧</div>
+          <h3>Deep Hydration</h3>
+          <p>Locks in moisture without making your skin feel oily or sticky.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌿</div>
+          <h3>For All Skin Types</h3>
+          <p>Gentle formula designed specifically for sensitive Indian skin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges -->
+  <section class="trust-badges">
+    <div class="container badges-container">
+      <div class="badge">
+        <h3 style="color: var(--primary-color); font-size: 2rem;">🌿</h3>
+        <strong>100% Natural Ingredients</strong>
+      </div>
+      <div class="badge">
+        <h3 style="color: var(--primary-color); font-size: 2rem;">🩺</h3>
+        <strong>Dermatologically Tested</strong>
+      </div>
+      <div class="badge">
+        <h3 style="color: var(--primary-color); font-size: 2rem;">🇮🇳</h3>
+        <strong>Made for Indian Skin</strong>
+      </div>
+      <div class="badge">
+        <h3 style="color: var(--primary-color); font-size: 2rem;">🚫</h3>
+        <strong>Cruelty Free</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="social-proof py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Real People, Real Results</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"I've struggled with adult acne for years in Mumbai's humidity. Glowify is the first serum that didn't feel heavy. My skin is visibly clearer and the glow is real! Best purchase of 2026."</p>
+          <div style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+            <img src="assets/user1.png" style="width: 40px; height: 40px; border-radius: 50%;" alt="Priya">
+            <strong style="font-size: 0.9rem;">Priya S., Mumbai</strong>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Using this in the Delhi pollution has been a lifesaver. My dark spots from old pimples are fading so fast. It's lightweight and works wonders under sunscreen."</p>
+          <div style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+            <img src="assets/user3.png" style="width: 40px; height: 40px; border-radius: 50%;" alt="Neha">
+            <strong style="font-size: 0.9rem;">Neha K., Delhi</strong>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"The 2-bottle bundle is a steal. My acne-prone skin usually reacts to everything, but this was so gentle. Finally found a routine that works for me in Pune."</p>
+          <div style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+            <img src="assets/user2.png" style="width: 40px; height: 40px; border-radius: 50%;" alt="Rahul">
+            <strong style="font-size: 0.9rem;">Rahul M., Pune</strong>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Finally a serum that doesn't make me break out even more. It actually calmed my skin down."</p>
+          <strong class="mt-2 d-block">- Rahul V., Pune</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"The gold accents on the bottle look so premium on my vanity, and the serum inside is even better!"</p>
+          <strong class="mt-2 d-block">- Sneha R., Hyderabad</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p>"Delivery was super fast to Kolkata. Packaging was great. Trying it for 3 days and already liking it."</p>
+          <strong class="mt-2 d-block">- Amit D., Kolkata</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Using it twice daily as recommended. The hydration is real, and my skin feels so soft."</p>
+          <strong class="mt-2 d-block">- Pooja G., Ahmedabad</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"This is a game changer for anyone with oily skin in this humidity. Truly 5 stars."</p>
+          <strong class="mt-2 d-block">- Vikram S., Chennai</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p>"Gifted this to my sister and she loves it. Ordering one for myself now."</p>
+          <strong class="mt-2 d-block">- Ishani P., Jaipur</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Visible reduction in my forehead acne within 5 days. Glowify is legit!"</p>
+          <strong class="mt-2 d-block">- Manish T., Chandigarh</strong>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="product.html" class="btn btn-primary">Try Glowify Today</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Pitch Section (For Store Buyers) -->
+  <section class="demo-pitch-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 style="color: #fff; font-size: 3rem;">Ready to Own This Brand?</h2>
+        <p style="color: #aaa; font-size: 1.2rem;">This is a premium, ready-to-launch dropshipping business demo.</p>
+      </div>
+
+      <div class="demo-pitch-grid">
+        <div class="pitch-card">
+          <h3>Start Your Brand</h3>
+          <ul style="list-style: none; color: #ccc; line-height: 2;">
+            <li>✅ Fully Designed Premium Store</li>
+            <li>✅ Ready-to-Sell Product Setup</li>
+            <li>✅ Conversion Optimized Layout</li>
+            <li>✅ COD Enabled (India)</li>
+            <li>✅ Mobile Optimized Layout</li>
+            <li>✅ Ready for Facebook/Instagram Ads</li>
+          </ul>
+        </div>
+
+        <div class="pitch-card">
+          <h3>Why This Store Will Sell</h3>
+          <ul style="list-style: none; color: #ccc; line-height: 2;">
+            <li>📈 High Demand Skincare Niche</li>
+            <li>🎯 Proven Problem-Solution Product</li>
+            <li>🇮🇳 Designed for Indian Audience</li>
+            <li>💰 High Profit Margins</li>
+            <li>⚡ Blazing Fast Performance</li>
+            <li>⭐ Built for Maximum Trust</li>
+          </ul>
+        </div>
+
+        <div class="pitch-card">
+          <h3>How It Works</h3>
+          <ul style="list-style: none; color: #ccc; line-height: 2;">
+            <li>1️⃣ Choose Your Niche/Product</li>
+            <li>2️⃣ We Build Your Premium Store</li>
+            <li>3️⃣ Launch & Run Your Ads</li>
+            <li>4️⃣ Scale Your Business</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="demo-cta-box">
+        <h2>Want a store like this?</h2>
+        <p style="margin-bottom: 30px; font-weight: 600;">Get your professional dropshipping business built in just 48 hours.</p>
+        <button class="btn btn-primary" style="background: #000; color: #fff; padding: 20px 50px; font-size: 1.2rem;" onclick="openWhatsApp()">Get Your Store Built</button>
+      </div>
+      
+      <p class="text-center mt-4" style="color: #666; font-size: 0.9rem;">
+        Note: This is a ready-to-launch demo product. Contact for full setup details.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="logo" style="color: var(--white);">Glow<span style="color: var(--primary-color);">ify</span></h3>
+          <p class="mt-2" style="color: #CCC; font-size: 0.9rem;">Radiant skin in 7 days. Premium skincare designed for the unique needs of Indian skin.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="policies.html">Privacy Policy</a></li>
+            <li><a href="policies.html">Terms of Service</a></li>
+            <li><a href="policies.html">Shipping & Returns</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Glowify. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float & Widget -->
+  <div class="wa-widget" id="wa-widget">
+    <div class="wa-header">
+      <img src="assets/support.png" alt="Support">
+      <div>
+        <div style="font-weight: 700;">Glowify Support</div>
+        <div class="status">● Online</div>
+      </div>
+    </div>
+    <div class="wa-body">
+      <div class="wa-message">
+        Hi there! 👋<br><br>
+        I'm Neha from Glowify. How can I help you achieve your perfect glow today?
+      </div>
+    </div>
+    <div class="wa-footer">
+      <a href="javascript:void(0)" onclick="openWhatsAppDirect()" class="wa-start-btn">Start Chat</a>
+    </div>
+  </div>
+
+  <a href="javascript:void(0)" id="wa-float-btn" class="whatsapp-float pulse-anim" title="Chat with us">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3>Your Cart (1)</h3>
+        <span id="close-cart" style="cursor: pointer; font-size: 1.5rem;">&times;</span>
+      </div>
+      
+      <div class="shipping-bar-container">
+        <div class="shipping-bar-text">🎉 You've unlocked <strong>FREE Shipping!</strong></div>
+        <div class="shipping-bar">
+          <div class="shipping-progress"></div>
+        </div>
+      </div>
+
+      <div class="cart-items">
+        <div class="cart-item">
+          <img src="assets/product.png" alt="Product">
+          <div class="cart-item-info">
+            <div class="cart-item-title">Glowify Anti-Acne Serum</div>
+            <div class="cart-item-price">₹499</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span>₹499</span>
+        </div>
+        <button class="btn btn-primary checkout-btn" onclick="location.href='product.html'">Secure Checkout</button>
+        <p class="text-center mt-2" style="font-size: 0.8rem; color: #777;">Taxes and shipping calculated at checkout</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glowify Anti-Acne Serum | Premium Skincare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .product-section { padding: 60px 0; background: var(--white); }
+    .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+    .product-image img { width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow); }
+    .product-info h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .price-block { margin: 15px 0; display: flex; align-items: center; gap: 15px; }
+    .discount-price { font-size: 2.2rem; font-weight: 800; color: var(--primary-color); }
+    .original-price { font-size: 1.2rem; color: #999; text-decoration: line-through; }
+    
+    .urgency-text { color: #D32F2F; font-weight: 700; font-size: 0.9rem; margin-bottom: 15px; display: flex; align-items: center; gap: 5px; }
+    .delivery-est { background: #F5F5F5; padding: 10px 15px; border-radius: 6px; font-size: 0.9rem; margin-bottom: 20px; border-left: 4px solid var(--primary-color); }
+    
+    .cta-group { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+    .buy-now-btn { background: #000; color: #FFF; width: 100%; padding: 18px; font-size: 1.2rem; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; transition: var(--transition); }
+    .buy-now-btn:hover { background: #333; transform: scale(1.02); }
+    
+    .trust-badges-small { display: flex; justify-content: space-between; margin-top: 20px; padding: 15px 0; border-top: 1px solid #EEE; }
+    .badge-small { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 5px; font-size: 0.75rem; font-weight: 600; color: #666; }
+    .badge-small i { font-size: 1.2rem; color: var(--primary-color); }
+
+    .review-img { width: 100%; border-radius: 8px; margin-top: 15px; }
+    
+    @media (max-width: 768px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .product-info h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-banner">
+    ✨ Demo Store – Ready to Launch Dropshipping Business
+  </div>
+
+  <div class="urgency-banner">
+    🔥 Limited Stock Available - Order within <span id="countdown">15:00</span> for Same Day Dispatch!
+  </div>
+
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Glowify Logo" style="height: 50px; width: auto;">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Shop Serum</a>
+        <a href="about.html">Our Story</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div id="cart-icon" style="cursor: pointer; position: relative; font-size: 1.5rem;">
+          🛒 <span style="position: absolute; top: -10px; right: -10px; background: var(--primary-color); color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.7rem;">1</span>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Section -->
+  <section class="product-section">
+    <div class="container product-grid">
+      <div class="product-image">
+        <img src="assets/product.png" alt="Glowify Anti-Acne Serum" class="float-anim">
+      </div>
+      <div class="product-info">
+        <h1>Glowify Anti-Acne Serum</h1>
+        <div style="color: var(--primary-color); font-size: 1.1rem; margin-bottom: 10px;">
+          ★★★★★ <span style="color: #666; font-size: 0.9rem;">(12,482 Happy Customers)</span>
+        </div>
+        
+        <div class="urgency-text" id="stock-urgency">
+          Only 7 units left in stock
+        </div>
+
+        <div class="price-block">
+          <span class="discount-price" id="main-price">₹899</span>
+          <span class="original-price">₹1,998</span>
+          <span class="save-badge">Save 55%</span>
+        </div>
+
+        <div class="delivery-est" id="delivery-est">
+          Get it by Tue, 6 May - Thu, 8 May
+        </div>
+
+        <!-- Bundle Selection -->
+        <div class="bundle-container">
+          <div class="bundle-option" data-price="499" onclick="selectBundle(this)">
+            <div class="bundle-radio"></div>
+            <div class="bundle-details">
+              <div class="bundle-name">1 Bottle (Standard)</div>
+              <div class="bundle-price">₹499</div>
+            </div>
+          </div>
+          <div class="bundle-option selected" data-price="899" onclick="selectBundle(this)">
+            <div class="bundle-badge">Most Popular</div>
+            <div class="bundle-radio"></div>
+            <div class="bundle-details">
+              <div class="bundle-name">2 Bottles (Buy 1 Get 1 at 20% OFF)</div>
+              <div class="bundle-price">₹899</div>
+            </div>
+          </div>
+          <div class="bundle-option" data-price="1199" onclick="selectBundle(this)">
+            <div class="bundle-badge">Best Value</div>
+            <div class="bundle-radio"></div>
+            <div class="bundle-details">
+              <div class="bundle-name">3 Bottles (Family Pack)</div>
+              <div class="bundle-price">₹1199</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <button class="buy-now-btn" onclick="openWhatsApp()">Buy Now (Cash on Delivery)</button>
+          <button class="btn btn-secondary add-to-cart-btn" style="width: 100%; border: 2px solid #000;">Add to Cart</button>
+        </div>
+
+        <div class="trust-badges-small">
+          <div class="badge-small"><span>🚚</span> Free Shipping</div>
+          <div class="badge-small"><span>💵</span> COD Available</div>
+          <div class="badge-small"><span>🔄</span> 7 Day Return</div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #FFFBF0; border-radius: 8px; border: 1px dashed var(--primary-color);">
+          <label style="display: block; font-weight: 700; margin-bottom: 10px;">📍 Check Delivery Timeline</label>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" id="pincode-input" placeholder="Enter 6-digit Pincode" class="form-control" style="flex: 1; border-color: var(--primary-color);">
+            <button class="btn btn-primary" onclick="checkPincode()" style="padding: 10px 20px; border-radius: 8px;">Check</button>
+          </div>
+          <p id="pincode-result" style="margin-top: 10px; font-size: 0.9rem; font-weight: 600; color: #2E7D32; display: none;"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Problem Section -->
+  <section class="info-section" style="background: #FFF5F5;">
+    <div class="container text-center" style="max-width: 800px;">
+      <h2 style="color: #D32F2F;">Struggling with Stubborn Acne & Scars?</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px; line-height: 1.8;">Stress, pollution, and high humidity in India take a toll on your skin. Regular creams just sit on the surface, while harsh chemicals can strip your skin of its natural confidence. You deserve a solution that actually works without the irritation.</p>
+    </div>
+  </section>
+
+  <!-- 2. Solution Section -->
+  <section class="info-section" style="background: var(--white);">
+    <div class="container text-center" style="max-width: 800px;">
+      <h2>Meet Your Skin's New Best Friend</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 30px;">Glowify Anti-Acne Serum is a clinically-inspired breakthrough. Our deep-penetrating formula sinks into the pores to target acne at the root, while simultaneously repairing your skin barrier with intense hydration.</p>
+      <img src="assets/product.png" alt="Solution" style="max-width: 300px; margin: 0 auto;" class="float-anim">
+    </div>
+  </section>
+
+  <!-- 3. Benefits Section -->
+  <section class="info-section" style="background: var(--secondary-color);">
+    <div class="container">
+      <h2 class="text-center">Why You'll Love It</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
+        <div style="background: white; padding: 30px; border-radius: 16px; text-align: center; box-shadow: var(--shadow);">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">🚫</div>
+          <h3 style="font-size: 1.2rem;">Removes Acne & Pimples</h3>
+          <p style="font-size: 0.9rem;">Eliminates 99% of acne-causing bacteria.</p>
+        </div>
+        <div style="background: white; padding: 30px; border-radius: 16px; text-align: center; box-shadow: var(--shadow);">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">✨</div>
+          <h3 style="font-size: 1.2rem;">Brightens Skin Tone</h3>
+          <p style="font-size: 0.9rem;">Fades dark spots and pigmentation for an even glow.</p>
+        </div>
+        <div style="background: white; padding: 30px; border-radius: 16px; text-align: center; box-shadow: var(--shadow);">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">💧</div>
+          <h3 style="font-size: 1.2rem;">Deep Hydration</h3>
+          <p style="font-size: 0.9rem;">Non-greasy moisture that lasts all day.</p>
+        </div>
+        <div style="background: white; padding: 30px; border-radius: 16px; text-align: center; box-shadow: var(--shadow);">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">🇮🇳</div>
+          <h3 style="font-size: 1.2rem;">Suitable for All Skin Types</h3>
+          <p style="font-size: 0.9rem;">Perfectly balanced for sensitive Indian skin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 & 5. Offer & Urgency Section (Incorporated into the product info above) -->
+  <section class="info-section" style="background: #FAFAFA;">
+    <div class="container text-center">
+      <h2>Exclusive Limited Time Offer</h2>
+      <div style="margin: 30px 0;">
+        <span style="font-size: 1.5rem; color: #666; text-decoration: line-through;">₹999</span>
+        <span style="font-size: 3.5rem; font-weight: 800; color: var(--primary-color); margin: 0 20px;">₹499</span>
+        <div class="urgency-text" style="font-size: 1.2rem; justify-content: center; margin-top: 15px;">
+          ⏳ Only few units left in stock!
+        </div>
+      </div>
+      <button class="btn btn-primary" style="padding: 20px 60px; font-size: 1.4rem;" onclick="openWhatsApp()">Order Now via WhatsApp</button>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="info-section" style="background: #FAFAFA;">
+    <div class="container">
+      <h2 class="text-center mb-4">Real Results from Real Users</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"My skin has never felt this smooth. The acne marks are almost gone in just 10 days!"</p>
+          <img src="assets/user1.png" alt="User Review" class="review-img">
+          <strong class="mt-2 d-block">- Priya S., Mumbai</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Best serum for Indian weather. Not sticky at all and keeps me glowing all day."</p>
+          <img src="assets/user3.png" alt="User Review" class="review-img">
+          <strong class="mt-2 d-block">- Neha K., Delhi</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Visible reduction in acne scars. Highly recommend the 2-bottle pack for best value."</p>
+          <img src="assets/user2.png" alt="User Review" class="review-img">
+          <strong class="mt-2 d-block">- Rahul M., Pune</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Bar -->
+  <div class="sticky-bar" id="sticky-bar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div class="product-info-mini">
+        <img src="assets/product.png" alt="Product">
+        <div>
+          <div style="font-weight: 700; font-size: 0.9rem;">Glowify Serum</div>
+          <div style="color: var(--primary-color); font-weight: 700;" id="sticky-price">₹899</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button class="btn btn-primary" onclick="openWhatsApp()" style="padding: 10px 20px; font-size: 0.9rem;">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer, Popups, etc (from existing index.html) -->
+  <footer style="background: #111; color: #fff; padding: 60px 0 20px;">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="logo" style="color: #fff;">Glow<span>ify</span></h3>
+          <p>The #1 Dermatologist Recommended Serum for Indian Skin.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="policies.html">Shipping Policy</a></li>
+            <li><a href="policies.html">Return Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="popup-overlay" id="exit-popup">
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      <h3>Wait! Don't Leave!</h3>
+      <p>Get an extra 10% OFF your first order.</p>
+      <div style="background: #FDEEEB; padding: 15px; border-radius: 8px; font-weight: 700; margin: 20px 0; border: 2px dashed var(--primary-color);">CODE: GLOW10</div>
+      <button class="btn btn-primary" style="width: 100%;" onclick="location.reload()">Claim Now</button>
+    </div>
+  </div>
+
+  <div class="cart-overlay" id="cart-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header"><h3>Your Cart</h3><span id="close-cart">&times;</span></div>
+      <div class="cart-items" style="padding: 20px;">
+        <div class="cart-item">
+          <img src="assets/product.png" alt="P">
+          <div><strong>Glowify Serum (Pack of 2)</strong><br>₹899</div>
+        </div>
+      </div>
+      <div class="cart-footer" style="padding: 20px; border-top: 1px solid #eee;">
+        <button class="btn btn-primary checkout-btn" style="width: 100%;" onclick="openWhatsApp()">Secure Checkout (COD)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Float & Widget -->
+  <div class="wa-widget" id="wa-widget">
+    <div class="wa-header">
+      <img src="assets/support.png" alt="Support">
+      <div>
+        <div style="font-weight: 700;">Glowify Support</div>
+        <div class="status">● Online</div>
+      </div>
+    </div>
+    <div class="wa-body">
+      <div class="wa-message">
+        Hi there! 👋<br><br>
+        I'm Neha from Glowify. How can I help you achieve your perfect glow today?
+      </div>
+    </div>
+    <div class="wa-footer">
+      <a href="javascript:void(0)" onclick="openWhatsAppDirect()" class="wa-start-btn">Start Chat</a>
+    </div>
+  </div>
+
+  <a href="javascript:void(0)" id="wa-float-btn" class="whatsapp-float pulse-anim" title="Chat with us">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <div class="live-toast" id="live-toast">
+    <div style="font-size: 24px;">🛒</div>
+    <div>
+      <p><strong id="toast-name">Priya from Mumbai</strong> just bought this</p>
+      <small><span id="toast-time">2 mins ago</span></small>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    function checkPincode() {
+      const pin = document.getElementById('pincode-input').value;
+      const res = document.getElementById('pincode-result');
+      if (pin.length === 6) {
+        res.innerText = "⏳ Verifying Pincode...";
+        res.style.display = "block";
+        setTimeout(() => {
+          res.innerHTML = "✅ Cash on Delivery & Free Shipping available for " + pin;
+        }, 1000);
+      } else {
+        alert("Please enter a valid 6-digit Pincode");
+      }
+    }
+  </script>
+</body>
+</html>
